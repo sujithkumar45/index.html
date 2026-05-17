@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data in Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JSON Data in Table</h2>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        const jsonData = [
+            {
+                "id": 1,
+                "name": "John Doe",
+                "age": 30,
+                "email": "john.doe@example.com"
+            },
+            {
+                "id": 2,
+                "name": "Jane Smith",
+                "age": 25,
+                "email": "jane.smith@example.com"
+            },
+            {
+                "id": 3,
+                "name": "Mike Johnson",
+                "age": 40,
+                "email": "mike.johnson@example.com"
+            }
+        ];
+        function displayTable(sujith) {
+            const tableBody = document.querySelector("#dataTable tbody");
+
+            for (let text = 0; text < sujith.length; text++) {
+                debugger;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td>${sujith[text].id}</td>
+                <td>${sujith[text].name}</td>
+                <td>${sujith[text].age}</td>
+                <td>${sujith[text].email}</td>
+            `;
+            debugger;
+                tableBody.appendChild(row);
+            }
+        }
+        displayTable(jsonData);
+    </script>
+
+</body>
+
+</html>
